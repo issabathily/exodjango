@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon Blog</title>
+</head>
+<header >
+
+    <nav  >
+      <div >
+     <ul >
+    
+     <li >  <a href=""> MyApp  </a> </li>
+    
+          <li >
+    
+             </li>
+    
+          <li class="navleft">    <a href="{% url 'ajout_post' %}"> Ajouter un Post </a> </a></li>
+        </ul>
+      </div>
+    </nav>
+    </header>
+
+
+
+<div  class="div">
+    {%	for	post in posts %}
+    
+<div class="contener">
+
+    
+
+        <div>
+            <h2 style="color: blue;">{{post.title}}</h2>
+            <p style="color: black">{{post.contener}}</p>
+            
+            <small style="color: black;">Publié	le	{{post.created_at}}</small>
+           
+        </div>
+
+        <button > 👍 </button> {{ 1 }}   <button class="button" style="color: white">  <a style="color: white" href="{% url 'post_details' post.id %}"> Detail ></a></button>
+    <hr>
+        </div>
+    
+    {%	endfor	%}
+    
+    </div>
+
+
+<footer style="background-color: lightgrey;padding-top: 20px;padding-bottom: 20px;text-align: center;margin: 0">
+
+&copy; issabathily@388 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur consequatur delectus magni nam.
+</footer>
+        <style>
+    
+    h1{
+        color:  darkblue;
+    }
+    body{
+        font-family: "Segoe UI", system-ui, sans-serif;
+
+    }
+
+    a{
+        text-decoration: none;
+        list-style: none;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        color: darkblue;
+    }
+    .contener:hover{
+    
+        scale: 1.1;
+    }
+        .contener{
+            transition: all 0.8s ;
+margin: 5%;
+            display: inline-block;
+
+            padding: 5px;
+        width: 35%;
+            color: blue;
+
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .button{
+            border-radius: 4px;
+            padding: 3px;
+            background-color:  blue;
+            border: none;
+    color: white;
+        }
+    
+        
+header{
+    background-color: white;
+}
+nav {
+padding: 8px ;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  font-size: 1.0rem;
+}
+
+
+nav ul  {
+
+  list-style: none;
+  margin-left: 2%;
+  display: flex;
+
+}
+nav a:hover{
+  background-color: rgba(201, 193, 193, 0.59);
+}
+nav a{
+  border-radius: 5px ;
+  transition: all 0.8s;
+  text-decoration: none;
+  color: black;
+    padding: 7px 20px ;
+
+}
+
+.navleft{
+
+  position: relative;
+  left: 70%;
+}
+.actives{
+border: solid 2px black;
+
+}
+
+.div div{
+
+}
+    </style>
+</body>
+</html>
