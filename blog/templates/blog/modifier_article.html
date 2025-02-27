@@ -1,28 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<h2>Modifier l'article : {{ Post.title }}</h2>
 
+<form method="POST">
 
-<form  method="POST">
-    <div class="contener">
+    <div>
+         {% csrf_token %}  <!-- Protection contre les attaques CSRF -->
+    </div>
 
-        <h2>  Ajout Formulaires </h2>
-<div class="div1">
-    {% csrf_token %} <!-- security  -->
-</div>
-        <div class="div2">
-    {{ form.as_p }}
-</div>
-        </div>
-    <button type="submit">Ajouter  </button>
+   <div>
+        {{ form.as_p }}  <!-- Affiche le formulaire en HTML -->
+   </div>
+    <button type="submit">Enregistrer </button>
 </form>
+
+
 
 <style>
 body{
+    color: #008374;
     font-family: sans-serif;
 }
     button{
@@ -36,7 +30,8 @@ body{
 button{
     color: white;
     border: none;
-      background-color: rgb(0,0,0);
+    border-radius: 5px;
+      background-color: #008374;
     transition: all 0.5s;
    width: 326px;
     margin-left: 5%;
@@ -44,7 +39,7 @@ button{
     input{
         padding: 10px  ;
         width: 326px;
-        height: 10px;
+        height: 20px;
     }
     form{
         margin-left: 5%;
@@ -61,5 +56,3 @@ button{
 
     }
 </style>
-</body>
-</html>

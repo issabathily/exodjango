@@ -1,0 +1,6 @@
+
+
+<form action="{% url 'supprimer_article' id=post.id %}" method="POST" style="margin-top: 10px;">
+    {% csrf_token %}
+    <button type="submit" onclick="return confirm('Voulez-vous vraiment supprimer cet article ?');">Supprimer</button>
+</form>
